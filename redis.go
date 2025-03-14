@@ -33,7 +33,7 @@ func NewRedis(ctx context.Context, config config.Config, store string) (*Redis, 
 
 	option := &redis.Options{
 		Addr:     fmt.Sprintf("%s:%s", host, config.GetString(fmt.Sprintf("database.redis.%s.port", connection))),
-		Username: config.GetString(fmt.Sprintf("database.redis.%s.username", connection))
+		Username: config.GetString(fmt.Sprintf("database.redis.%s.username", connection)),
 		Password: config.GetString(fmt.Sprintf("database.redis.%s.password", connection)),
 		DB:       config.GetInt(fmt.Sprintf("database.redis.%s.database", connection)),
 	}
